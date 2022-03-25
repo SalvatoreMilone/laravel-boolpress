@@ -1999,11 +1999,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Main",
   data: function data() {
     return {
-      posts: ["1", "2", "3"]
+      posts: []
     };
   },
   created: function created() {
@@ -2011,7 +2016,6 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get("/api/posts").then(function (data) {
       _this.posts = data.data;
-      console.log(data);
     });
   }
 });
@@ -2599,18 +2603,30 @@ var render = function () {
       "ul",
       { staticClass: "main-card-ul" },
       _vm._l(_vm.posts, function (post, index) {
-        return _c("li", { key: index, staticClass: "main-card" }, [
+        return _c("li", { key: post.slug, staticClass: "main-card" }, [
           _c("div", { staticClass: "main-card-index" }, [
             _vm._v(_vm._s(index)),
           ]),
-          _vm._v(" "),
-          _c("div", [_vm._v("Categoria : " + _vm._s(post.category_id))]),
           _vm._v(" "),
           _c("div", [_vm._v("Titolo : " + _vm._s(post.title))]),
           _vm._v(" "),
           _c("div", [_vm._v("Contentuto :")]),
           _vm._v(" "),
           _c("div", [_vm._v(_vm._s(post.content))]),
+          _vm._v(" "),
+          post.category
+            ? _c("div", [_vm._v(_vm._s(post.category.name))])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "ul",
+              _vm._l(post.tags, function (tag) {
+                return _c("li", { key: tag.slug }, [_vm._v(_vm._s(tag.name))])
+              }),
+              0
+            ),
+          ]),
         ])
       }),
       0
@@ -15108,7 +15124,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Salvatore\Desktop\boolean\compiti\2022\laravel-api\laravel-api\resources\js\guest\front.js */"./resources/js/guest/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Salvatore\Desktop\boolean\compiti\2022\laravel-boolpress\laravel-boolpress\resources\js\guest\front.js */"./resources/js/guest/front.js");
 
 
 /***/ })

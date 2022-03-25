@@ -1,12 +1,17 @@
 <template>
   <div>
       <ul class="main-card-ul">
-          <li v-for="(post, index) in posts" :key="index" class="main-card">
+          <li v-for="(post, index) in posts" :key="post.slug" class="main-card">
               <div class="main-card-index">{{index}}</div>
-              <div>Categoria : {{post.category_id}}</div>
               <div>Titolo : {{post.title}}</div>
               <div>Contentuto :</div>
               <div>{{post.content}}</div>
+              <div v-if="post.category">{{post.category.name}}</div>
+              <div>
+                  <ul>
+                      <li v-for="tag in post.tags" :key="tag.slug">{{tag.name}}</li>
+                  </ul>
+              </div>
         </li>
       </ul>
   </div>
@@ -17,11 +22,7 @@ export default {
     name: "Main",
     data() {
         return{
-            posts: [
-                "1",
-                "2",
-                "3"
-            ],
+            posts: [],
         }
     },
     created() {
@@ -29,7 +30,6 @@ export default {
         .get("/api/posts")
         .then((data)=>{
             this.posts = data.data;
-            console.log(data)
         })
     }
 }

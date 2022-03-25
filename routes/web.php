@@ -13,18 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front');
-});
-
 Auth::routes();
 
 Route::middleware('auth')
-    ->namespace('Admin')
-    ->name('admin.')
+->namespace('Admin')
+->name('admin.')
     ->prefix('admin')
     ->group(function(){
         Route::get('/', 'HomeController@index')
         ->name('home');
         Route::resource('/posts', PostController::class);
     });
+
+Route::get('/', function () {
+    return view('front');
+});
+
+Route::get("{any}", function(){
+    return view("front");
+})->where("any", ".*");
