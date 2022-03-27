@@ -10962,36 +10962,6 @@ a.text-dark:focus {
   }
 }
 
-.main-card-ul {
-  width: 100vw;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
-
-.main-card-ul .main-card {
-  background-color: #aee4c6;
-  color: #313131;
-  font-weight: bolder;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 300px;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 10px;
-}
-
-.main-card-ul .main-card > * {
-  padding-bottom: 20px;
-}
-
-.main-card-index {
-  font-size: 3rem;
-  color: white;
-}
-
 .btn-1 {
   background-color: white;
   border: 2px solid #c4c4c4;
