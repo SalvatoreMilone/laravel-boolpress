@@ -10963,8 +10963,8 @@ a.text-dark:focus {
 }
 
 .btn-1 {
-  background-color: white;
-  border: 2px solid #c4c4c4;
+  background-color: transparent;
+  border: 3px solid #FFDDD2;
   border-radius: 10px;
   padding: 5px 10px;
   margin: 10px;
@@ -10972,6 +10972,11 @@ a.text-dark:focus {
 }
 
 .btn-1:hover {
-  border: 5px solid #4396bf;
+  border: 5px solid #FFDDD2;
+}
+
+.btn-1 a {
+  color: #FFDDD2;
+  text-decoration: none;
 }
 

@@ -1,6 +1,5 @@
 <template>
   <div>
-        <h1>home page</h1>
         <Posts/>
   </div>
 </template>
@@ -14,6 +13,6 @@ export default {
 }
 </script>
 
-<style>
 
+<style lang="scss" scoped>
 </style>

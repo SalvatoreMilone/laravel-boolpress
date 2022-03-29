@@ -7,15 +7,28 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+$s-blue: #006D77;
+$s-l-blue: #83C5BE;
+$s-w: #EDF6F9;
+$s-pink: #FFDDD2;
+$s-d-pink: #E29578;
+
+
+// My Colors
 
 .btn-1{
-    background-color: white;
-    border: 2px solid rgb(196, 196, 196);
+    background-color: transparent;
+    border: 3px solid $s-pink;
     border-radius: 10px;
     padding: 5px 10px;
     margin: 10px;
     transition: all 250ms ease;
     &:hover{
-        border: 5px solid rgb(67, 150, 191);
+        border: 5px solid $s-pink;
+    }
+
+    & a{
+        color: $s-pink;
+        text-decoration: none;
     }
 }
